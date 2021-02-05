@@ -1,0 +1,39 @@
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+            xmlns:tns="http://ensapay.com/clientservice"
+            targetNamespace="http://ensapay.com/clientservice"
+            elementFormDefault="qualified">
+    <!--client creation request approval-->
+    <xsd:element name="ClientCreationRequest">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element name="id" type="xsd:string" />
+                <xsd:element name="firstname" type="xsd:string" />
+                <xsd:element name="lastname" type="xsd:string" />
+                <xsd:element name="tel" type="xsd:string" />
+                <xsd:element name="email" type="xsd:string" />
+                <xsd:element name="plafond" type="xsd:int" />
+                <xsd:element name="agent" type="xsd:string" />
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+
+    <xsd:element name="ClientCreationResponse">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element name="id" type="xsd:string" />
+                <xsd:element name="firstname" type="xsd:string" />
+                <xsd:element name="lastname" type="xsd:string" />
+                <xsd:element name="tel" type="xsd:string" />
+                <xsd:element name="email" type="xsd:string" />
+                <xsd:element name="plafond" type="xsd:int" />
+                <xsd:element name="agent" type="xsd:string" />
+                <xsd:element name="solde" type="xsd:int" />
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+
+
+
+
+
+</xsd:schema>
