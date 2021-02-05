@@ -1,10 +1,14 @@
-package com.ensapay.service;
+package com.ensapay.service.orange;
 
 import com.ensapay.entity.*;
+import com.ensapay.entity.orange.Facture;
+import com.ensapay.entity.orange.PayFactureClient;
+import com.ensapay.entity.orange.PayFactureOrange;
+import com.ensapay.entity.orange.Transaction;
 import com.ensapay.repository.ClientCreationRepository;
 import com.ensapay.repository.CmiClientRepository;
-import com.ensapay.repository.CreancierOrangeRepository;
-import com.ensapay.repository.TransactionRepository;
+import com.ensapay.repository.orange.FactureOrangeRepository;
+import com.ensapay.repository.orange.TransactionRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.web.client.RestTemplateBuilder;
 import org.springframework.context.annotation.Bean;
@@ -16,13 +20,13 @@ import java.util.*;
 import java.util.stream.Collectors;
 
 @Service
-public class CreancierOrangeService {
+public class FactureOrangeService {
 
     private static final String URL_GET_ALL_FACTURES_BY_REFERENCE_ID = "http://68.183.138.82:5000/api/factures/getfactures?referenceId=";
 
     private static final String URL_PAY_LIST_OF_FACTURES = "http://68.183.138.82:5000/api/factures/payfactures";
 
-    CreancierOrangeRepository creancierOrangeRepository;
+    FactureOrangeRepository factureOrangeRepository;
     @Autowired
     RestTemplate restTemplate;
     @Autowired
@@ -91,6 +95,7 @@ public class CreancierOrangeService {
                 Transaction transaction = new Transaction();
                 transaction.setClientId(ensaPayClient.getId());
                 transaction.setPayFactureClient(payFactureClient);
+                transaction.setDateTransaction(new Date());
                 Transaction savedTransaction = transactionRepository.save(transaction);
 
                 PayFactureOrange payFactureOrange = new PayFactureOrange();

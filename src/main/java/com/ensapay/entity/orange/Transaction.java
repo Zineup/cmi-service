@@ -1,5 +1,6 @@
-package com.ensapay.entity;
+package com.ensapay.entity.orange;
 
+import com.ensapay.entity.orange.PayFactureClient;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;

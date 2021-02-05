@@ -1,4 +1,4 @@
-package com.ensapay.entity;
+package com.ensapay.entity.orange;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.AllArgsConstructor;
@@ -8,9 +8,12 @@ import lombok.ToString;
 
 @Data @NoArgsConstructor @AllArgsConstructor @ToString
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class PayFactureClient {
+public class Pass {
 
-    private String reference_id;
-    private String[] facture_ids;
-    private String client_id;
+    private String id;
+    private String prix;
+    private String libelle;
+    private String description;
+    private String dureeValidite;
+
 }

@@ -1,4 +1,4 @@
-package com.ensapay.entity;
+package com.ensapay.entity.orange;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.Data;
